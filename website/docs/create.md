@@ -8,7 +8,7 @@ sidebar_label: Create
 
 ---
 
-Click on the **Schedule your first workflow** button on the home page to get started. It will take you to the workflow page where you can choose or design your own workflow by doing the following steps:
+Click on the \*\*Schedule button on the home page to get started. It will take you to the workflow page where you can choose or design your own workflow by doing the following steps:
 
 ### 1. Choose Target Cluster
 

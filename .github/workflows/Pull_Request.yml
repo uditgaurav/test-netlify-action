@@ -103,7 +103,7 @@ jobs:
           body-includes: "Netlify-Preview :"
       
       - run: |
-          console.log(${{ steps.preview.outputs }})
+          console.log(${{ ${{join(steps.preview.outputs.*, '\n')}} }})
 
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v1
