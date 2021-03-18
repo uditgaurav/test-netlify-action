@@ -100,10 +100,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
-          body-includes: "Netlify-Preview :"
-      
-      - run: |
-          echo "${{ toJson(steps.preview.outputs) }}"
+          body-includes: "Netlify-Preview Deployed Here :"
 
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v1
@@ -111,6 +108,7 @@ jobs:
           comment-id: ${{ steps.previewComment.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            "Netlify-Preview : ${{ steps.preview.outputs }}"
+            "Netlify-Preview Deployed Here :"
+            "${{ steps.preview.outputs.NETLIFY_URL }}"
           edit-mode: replace
       
