@@ -8,7 +8,7 @@ sidebar_label: Architecture
 
 <img src={require('./assets/portal-arch.jpg').default} width="800" />
 
-The above picture = architecture of the Litmus. At highlevel, Litmus components can be classified into two parts
+The above picture = architecture of the Litmunents can be classified into two parts
 
 1. Portal
 2. Agents
