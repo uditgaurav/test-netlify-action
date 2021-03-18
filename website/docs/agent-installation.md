@@ -11,7 +11,7 @@ In Litmus the Agents can be classified as two types
 
 As part of Litmus inault, a self cluster would be registered as Agent in the Portal. From Portal you induce chaos into self cluster and observe the results from the Portal.
 
-As you are aware by now, Portal is a Cross Cloud Chaos Cone connected you can manage the chaos from the Portal that is you can induce chaos into this agent from the Portal and observe the results from the Portal. Using the command line utility _litmusctl_ you can connect the external agents to the Portal.
+As you are aware by now, Portal is a Cross Cloud Chaos Cone connectn manage the chaos from the Portal that is you can induce chaos into this agent from the Portal and observe the results from the Portal. Using the command line utility _litmusctl_ you can connect the external agents to the Portal.
 
 ## Litmusctl
 
