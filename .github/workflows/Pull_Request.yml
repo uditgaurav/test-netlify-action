@@ -86,10 +86,28 @@ jobs:
           npm run build
       # Deploy to Netlify using our production secrets
       - uses: netlify/actions/cli@master
+        id: preview
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
           args: deploy --dir=website/build
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: previewComment
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: "Netlify-Preview :"
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.previewComment.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            "Netlify-Preview : ${{ steps.preview.outputs }}"
+          edit-mode: replace
       
